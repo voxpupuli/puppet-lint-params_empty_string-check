@@ -76,7 +76,6 @@ PuppetLint.configuration.send('disable_empty_string_assignment')
 
 This plugin was originally authored by [Tim 'bastelfreak' Meusel](https://github.com/bastelfreak).
 The maintainer preferred that Puppet Community take ownership of the module for future improvement and maintenance.
-Existing pull requests and issues were transferred over, please fork and continue to contribute here instead of Camptocamp.
 
 ## License
 
