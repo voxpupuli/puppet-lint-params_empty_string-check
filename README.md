@@ -39,22 +39,28 @@ recommendations are documented at [voxpupuli.org](https://voxpupuli.org/docs/rev
 ```puppet
 class foo (
   String $bar = '',
+  String[0] $foo = '',
+  Variant[String[0], Integer] $baz = '',
 ) {
   # logic
 }
 ```
+
+All three of the above variantions aren't recommended.
 
 #### What you should have done
 
 ```puppet
 class foo (
   Optional[String[1]] $bar = undef,
+  Optional[String[1]] $foo = undef,
+  Optional[String[1]] $baz = undef,
 ) {
   # logic
 }
 ```
 
-There are situations where `undef` doesn't make sense your you don't want a
+There are situations where `undef` doesn't make sense or you don't want a
 minimal string length of 1. Because of that, this module doesn't implement a
 autofix method.
 
@@ -72,14 +78,24 @@ Alternatively, if you’re calling puppet-lint via the Rake task, you should ins
 PuppetLint.configuration.send('disable_empty_string_assignment')
 ```
 
+You can also disable it inline:
+
+```puppet
+class foo (
+  String $baz = '', # lint:ignore:params_empty_string_assignment
+) {
+  # awesome logic here
+}
+```
+
 ## Transfer Notice
 
 This plugin was originally authored by [Tim 'bastelfreak' Meusel](https://github.com/bastelfreak).
-The maintainer preferred that Puppet Community take ownership of the module for future improvement and maintenance.
+The maintainer preferred that Vox Pupuli take ownership of the module for future improvement and maintenance.
 
 ## License
 
-This gem is licensed under the Apache-2 license.
+This gem is licensed under the AGPL-3 license.
 
 ## Release information
 
