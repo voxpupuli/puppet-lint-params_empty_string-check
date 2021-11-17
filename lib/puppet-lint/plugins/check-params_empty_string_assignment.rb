@@ -11,8 +11,8 @@ PuppetLint.new_check(:params_empty_string_assignment) do
         # why can those be empty?
         next if type.empty?
         next if default_value.empty?
-        # if the parameter has datatype String/String[] and a value of ''
-        if type[0].type == :TYPE && type[0].value =~ /^String/ && default_value[0].value == ''
+        # if the parameter has datatype String/String[]/Variant and a value of ''
+        if type[0].type == :TYPE && type[0].value =~ /^(String|Variant)/ && default_value[0].value == ''
           notify :warning, {
             :message => 'class parameter with String type defaults to empty string',
             :line    => param.line,
