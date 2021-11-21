@@ -23,7 +23,31 @@ describe 'params_empty_string_assignment' do
         EOS
       }
 
-      it 'should not detect one problems' do
+      it 'should detect one problem' do
+        expect(problems).to have(1).problem
+      end
+    end
+
+    context 'class definition with empty strings and loose Variant datatype 1' do
+      let (:code) {
+        <<-EOS
+        class foo ( Variant[String[0], Integer] $bar = '' ) { }
+        EOS
+      }
+
+      it 'should detect one problem' do
+        expect(problems).to have(1).problem
+      end
+    end
+
+    context 'class definition with empty strings and loose Variant datatype 2' do
+      let (:code) {
+        <<-EOS
+        class foo ( Variant[Any, Optional] $bar = '' ) { }
+        EOS
+      }
+
+      it 'should detect one problem' do
         expect(problems).to have(1).problem
       end
     end
@@ -59,6 +83,28 @@ describe 'params_empty_string_assignment' do
       let (:code) {
         <<-EOS
         class foo ( ) { $bar = '' }
+        EOS
+      }
+
+      it 'should not detect any problems' do
+        expect(problems).to have(0).problem
+      end
+    end
+    context 'class definition with value and minimal string length at 0' do
+      let (:code) {
+        <<-EOS
+        class foo ( String[0] = 'public' ) { }
+        EOS
+      }
+
+      it 'should not detect any problems' do
+        expect(problems).to have(0).problem
+      end
+    end
+    context 'class definition with value and no minimal string length' do
+      let (:code) {
+        <<-EOS
+        class foo ( String = 'public' ) { }
         EOS
       }
 
