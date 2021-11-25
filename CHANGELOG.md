@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/tree/1.0.0) (2021-11-25)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/compare/0.1.0...1.0.0)
+
+**Implemented enhancements:**
+
+- Mark Variant type on empty strings invalid as well [\#8](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/pull/8) ([bastelfreak](https://github.com/bastelfreak))
+- Mark String\[0\] as invalid as well [\#7](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/pull/7) ([bastelfreak](https://github.com/bastelfreak))
+
+**Fixed bugs:**
+
+-  Don't fail on values that contain variables [\#10](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/pull/10) ([bastelfreak](https://github.com/bastelfreak))
+- fix typos in unit tests [\#9](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/pull/9) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Switch to MIT license [\#11](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/pull/11) ([bastelfreak](https://github.com/bastelfreak))
+- Cleanup wrong transfer notice in README.md [\#6](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/pull/6) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [0.1.0](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/tree/0.1.0) (2021-11-01)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/compare/ce94dbc949dde036d1b5274a12d3087f9cfdf519...0.1.0)

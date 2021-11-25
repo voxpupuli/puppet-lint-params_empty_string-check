@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name        = 'puppet-lint-params_empty_string-check'
-  spec.version     = '0.1.0'
+  spec.version     = '1.0.0'
   spec.homepage    = 'https://github.com/voxpupuli/puppet-lint-params_empty_string-check'
   spec.license     = 'MIT'
   spec.author      = 'Vox Pupuli'
