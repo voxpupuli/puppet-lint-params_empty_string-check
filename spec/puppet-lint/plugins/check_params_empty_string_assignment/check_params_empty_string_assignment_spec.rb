@@ -93,7 +93,7 @@ describe 'params_empty_string_assignment' do
     context 'class definition with value and minimal string length at 0' do
       let (:code) {
         <<-EOS
-        class foo ( String[0] = 'public' ) { }
+        class foo ( String[0] $var = 'public' ) { }
         EOS
       }
 
@@ -104,7 +104,7 @@ describe 'params_empty_string_assignment' do
     context 'class definition with value and no minimal string length' do
       let (:code) {
         <<-EOS
-        class foo ( String = 'public' ) { }
+        class foo ( String $var = 'public' ) { }
         EOS
       }
 
