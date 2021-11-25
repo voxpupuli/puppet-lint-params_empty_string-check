@@ -112,5 +112,96 @@ describe 'params_empty_string_assignment' do
         expect(problems).to have(0).problem
       end
     end
+    # this usecase was reported on slack
+    context 'class definition with value and string interpolation and values' do
+      let (:code) {
+        <<-EOS
+        class foo (
+          String $install_path = 'bla',
+          String $bin_path = "${install_path}/public",
+          ) {
+            # code
+          }
+        EOS
+      }
+
+      it 'should not detect any problems' do
+        expect(problems).to have(0).problem
+      end
+    end
+    # this usecase was reported on slack as well
+    context 'class definition with value and string interpolation and not all values' do
+      let (:code) {
+        <<-EOS
+        class foo (
+          String $install_path,
+          String $bin_path = "${install_path}/public",
+          ) {
+            # code
+          }
+        EOS
+      }
+
+      it 'should not detect any problems' do
+        expect(problems).to have(0).problem
+      end
+    end
+    # this usecase was reported on slack as well
+    context 'class definition with value and string interpolation and not all values and types' do
+      let (:code) {
+        <<-EOS
+        class foo (
+          String $install_path,
+          String[1] $bin_path = "${install_path}/public",
+          ) {
+            # code
+          }
+        EOS
+      }
+
+      it 'should not detect any problems' do
+        expect(problems).to have(0).problem
+      end
+    end
+    # this usecase was reported on slack as well
+    context 'class definition with value and string interpolation and not all values and types' do
+      let (:code) {
+        <<-EOS
+        define bar::foo (
+          String $install_path,
+          String[1] $bin_path = "${install_path}/public",
+          ) {
+            # code
+          }
+        EOS
+      }
+
+      it 'should not detect any problems' do
+        expect(problems).to have(0).problem
+      end
+    end
+    # this usecase was reported on slack as well
+    context 'class definition with value and string interpolation and not all values and types' do
+      let (:code) {
+        <<-EOS
+        define profiles::host_api::nexus::managed::gem_installation (
+          String $gem_source,
+          String $gem_name,
+          String $version,
+          String $user,
+          String $group,
+          String $install_path,
+          String[1] $bin_path = "${install_path}/bin",
+          Boolean $add_bin_stub = false,
+        ) {
+          # code
+        }
+        EOS
+      }
+
+      it 'should not detect any problems' do
+        expect(problems).to have(0).problem
+      end
+    end
   end
 end
