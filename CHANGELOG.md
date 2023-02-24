@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/tree/1.1.0) (2023-02-24)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/compare/1.0.0...1.1.0)
+
+**Implemented enhancements:**
+
+- puppet-lint: Allow 3.x [\#16](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/pull/16) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [1.0.0](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/tree/1.0.0) (2021-11-25)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/compare/0.1.0...1.0.0)
