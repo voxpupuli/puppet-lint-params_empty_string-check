@@ -14,6 +14,8 @@ Gem::Specification.new do |spec|
   spec.test_files  = Dir['spec/**/*']
   spec.summary     = 'A puppet-lint plugin to check for class parameters assigned to the empty string.'
 
+  spec.required_ruby_version = '>= 2.7.0'
+
   spec.add_dependency             'puppet-lint', '>= 3', '< 5'
   spec.add_development_dependency 'rspec', '~> 3.10'
   spec.add_development_dependency 'rspec-its', '~> 1.3'
